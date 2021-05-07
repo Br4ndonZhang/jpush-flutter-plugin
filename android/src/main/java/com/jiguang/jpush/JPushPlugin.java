@@ -20,8 +20,6 @@ import java.util.Set;
 import cn.jpush.android.api.JPushInterface;
 import cn.jpush.android.data.JPushLocalNotification;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
-import io.flutter.embedding.engine.plugins.activity.ActivityAware;
-import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
@@ -30,20 +28,23 @@ import io.flutter.plugin.common.MethodChannel.Result;
 /**
  * JPushPlugin
  */
-public class JPushPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
+public class JPushPlugin implements FlutterPlugin, MethodCallHandler {
+
 
     private static String TAG = "| JPUSH | Flutter | Android | ";
+
     public static JPushPlugin instance;
+
     static List<Map<String, Object>> openNotificationCache = new ArrayList<>();
 
     private boolean dartIsReady = false;
     private boolean jpushDidinit = false;
 
     private List<Result> getRidCache;
-    private Context context;
 
+    private Context context;
     private MethodChannel channel;
-    public final Map<Integer, Result> callbackMap;
+    public Map<Integer, Result> callbackMap;
     private int sequence;
 
     public JPushPlugin() {
@@ -53,6 +54,20 @@ public class JPushPlugin implements FlutterPlugin, MethodCallHandler, ActivityAw
         instance = this;
     }
 
+
+    @Override
+    public void onAttachedToEngine(FlutterPluginBinding flutterPluginBinding) {
+        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "jpush");
+        channel.setMethodCallHandler(this);
+        context = flutterPluginBinding.getApplicationContext();
+    }
+
+
+    @Override
+    public void onDetachedFromEngine(FlutterPluginBinding binding) {
+        channel.setMethodCallHandler(null);
+        instance.dartIsReady = false;
+    }
 
     @Override
     public void onMethodCall(MethodCall call, Result result) {
@@ -151,7 +166,7 @@ public class JPushPlugin implements FlutterPlugin, MethodCallHandler, ActivityAw
         }
 
         if (context == null) {
-            Log.d(TAG, "scheduleCache， context is nil.");
+            Log.d(TAG, "scheduleCache，register context is nil.");
             return;
         }
 
@@ -337,41 +352,6 @@ public class JPushPlugin implements FlutterPlugin, MethodCallHandler, ActivityAw
         Log.d(TAG, "openSettingsForNotification: ");
 
         JPushInterface.goToAppNotificationSettings(context);
-
-    }
-
-    @Override
-    public void onAttachedToEngine(FlutterPluginBinding flutterPluginBinding) {
-        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "jpush");
-        channel.setMethodCallHandler(this);
-        context = flutterPluginBinding.getApplicationContext();
-
-
-    }
-
-    @Override
-    public void onDetachedFromEngine(FlutterPluginBinding flutterPluginBinding) {
-        channel.setMethodCallHandler(null);
-        instance.dartIsReady = false;
-    }
-
-    @Override
-    public void onAttachedToActivity(ActivityPluginBinding activityPluginBinding) {
-
-    }
-
-    @Override
-    public void onDetachedFromActivityForConfigChanges() {
-
-    }
-
-    @Override
-    public void onReattachedToActivityForConfigChanges(ActivityPluginBinding activityPluginBinding) {
-
-    }
-
-    @Override
-    public void onDetachedFromActivity() {
 
     }
 
