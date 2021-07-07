@@ -1,3 +1,11 @@
+## 2.1.4
++ 新增：Android push 新增 setWakeEnable 接口
+## 2.1.2
++ 升级：升级 android push 4.0.8 jcore 2.8.2，ios push 3.6.1，jcore 2.6.2。
+## 2.0.9
++ 适配：处理 demo 运行时报错。
+## 2.0.7
++ 适配：适配 null safety
 ## 2.0.5
 + 升级：android jcore 升级 2.7.8
 ## 2.0.3

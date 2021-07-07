@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:platform/platform.dart';
@@ -20,7 +19,7 @@ class JPush {
         _platform = platform;
 
   static final JPush _instance =
-      new JPush.private(const MethodChannel('jpush'), const LocalPlatform());
+  new JPush.private(const MethodChannel('jpush'), const LocalPlatform());
 
   EventHandler? _onReceiveNotification;
   EventHandler? _onOpenNotification;
@@ -28,8 +27,8 @@ class JPush {
   EventHandler? _onReceiveNotificationAuthorization;
 
   void setup({
-    required String appKey,
-    required bool production,
+    String appKey = '',
+    bool production = false,
     String channel = '',
     bool debug = false,
   }) {
@@ -41,6 +40,10 @@ class JPush {
       'production': production,
       'debug': debug
     });
+  }
+
+  void setWakeEnable({bool enable = false}) {
+    _channel.invokeMethod('setWakeEnable', {'enable': enable});
   }
 
   ///
@@ -66,19 +69,12 @@ class JPush {
 
     switch (call.method) {
       case "onReceiveNotification":
-        if (_onReceiveNotification == null) return;
         return _onReceiveNotification!(call.arguments.cast<String, dynamic>());
       case "onOpenNotification":
-        if (_onOpenNotification == null) return;
-
         return _onOpenNotification!(call.arguments.cast<String, dynamic>());
       case "onReceiveMessage":
-        if (_onReceiveMessage == null) return;
-
         return _onReceiveMessage!(call.arguments.cast<String, dynamic>());
       case "onReceiveNotificationAuthorization":
-        if (_onReceiveNotificationAuthorization == null) return;
-
         return _onReceiveNotificationAuthorization!(
             call.arguments.cast<String, dynamic>());
       default:
@@ -112,7 +108,7 @@ class JPush {
     print(flutter_log + "setTags:");
 
     final Map<dynamic, dynamic> result =
-        await _channel.invokeMethod('setTags', tags);
+    await _channel.invokeMethod('setTags', tags);
     return result;
   }
 
@@ -126,7 +122,7 @@ class JPush {
     print(flutter_log + "cleanTags:");
 
     final Map<dynamic, dynamic> result =
-        await _channel.invokeMethod('cleanTags');
+    await _channel.invokeMethod('cleanTags');
     return result;
   }
 
@@ -142,7 +138,7 @@ class JPush {
     print(flutter_log + "addTags:");
 
     final Map<dynamic, dynamic> result =
-        await _channel.invokeMethod('addTags', tags);
+    await _channel.invokeMethod('addTags', tags);
     return result;
   }
 
@@ -157,7 +153,7 @@ class JPush {
     print(flutter_log + "deleteTags:");
 
     final Map<dynamic, dynamic> result =
-        await _channel.invokeMethod('deleteTags', tags);
+    await _channel.invokeMethod('deleteTags', tags);
     return result;
   }
 
@@ -171,7 +167,7 @@ class JPush {
     print(flutter_log + "getAllTags:");
 
     final Map<dynamic, dynamic> result =
-        await _channel.invokeMethod('getAllTags');
+    await _channel.invokeMethod('getAllTags');
     return result;
   }
 
@@ -187,7 +183,7 @@ class JPush {
     print(flutter_log + "setAlias:");
 
     final Map<dynamic, dynamic> result =
-        await _channel.invokeMethod('setAlias', alias);
+    await _channel.invokeMethod('setAlias', alias);
     return result;
   }
 
@@ -201,7 +197,7 @@ class JPush {
     print(flutter_log + "deleteAlias:");
 
     final Map<dynamic, dynamic> result =
-        await _channel.invokeMethod('deleteAlias');
+    await _channel.invokeMethod('deleteAlias');
     return result;
   }
 
@@ -249,7 +245,7 @@ class JPush {
   /// 清空通知栏上某个通知
   /// @param notificationId 通知 id，即：LocalNotification id
   ///
-  void clearNotification({required int notificationId}) {
+  void clearNotification({int notificationId = 0}) {
     print(flutter_log + "clearNotification:");
     _channel.invokeListMethod("clearNotification", notificationId);
   }
@@ -265,7 +261,7 @@ class JPush {
     print(flutter_log + "getLaunchAppNotification:");
 
     final Map<dynamic, dynamic> result =
-        await _channel.invokeMethod('getLaunchAppNotification');
+    await _channel.invokeMethod('getLaunchAppNotification');
     return result;
   }
 
@@ -296,7 +292,7 @@ class JPush {
   /// 调用此 API 检测通知授权状态是否打开
   Future<bool> isNotificationEnabled() async {
     final Map<dynamic, dynamic> result =
-        await _channel.invokeMethod('isNotificationEnabled');
+    await _channel.invokeMethod('isNotificationEnabled');
     bool isEnabled = result["isEnabled"];
     return isEnabled;
   }
@@ -337,32 +333,36 @@ class NotificationSettingsIOS {
 /// @property {string} [subtitle] - 子标题
 class LocalNotification {
   final int? buildId; //?
-  final int id;
-  final String title;
-  final String content;
+  final int? id;
+  final String? title;
+  final String? content;
   final Map<String, String>? extra; //?
-  final DateTime fireTime;
+  final DateTime? fireTime;
   final int? badge; //?
   final String? soundName; //?
   final String? subtitle; //?
 
   const LocalNotification(
-      {required this.id,
-      required this.title,
-      required this.content,
-      required this.fireTime,
-      this.buildId,
-      this.extra,
-      this.badge = 0,
-      this.soundName,
-      this.subtitle});
+      {@required this.id,
+        @required this.title,
+        @required this.content,
+        @required this.fireTime,
+        this.buildId,
+        this.extra,
+        this.badge = 0,
+        this.soundName,
+        this.subtitle})
+      : assert(id != null),
+        assert(title != null),
+        assert(content != null),
+        assert(fireTime != null);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
       'title': title,
       'content': content,
-      'fireTime': fireTime.millisecondsSinceEpoch,
+      'fireTime': fireTime?.millisecondsSinceEpoch,
       'buildId': buildId,
       'extra': extra,
       'badge': badge,

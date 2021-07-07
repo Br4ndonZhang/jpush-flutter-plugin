@@ -3,25 +3,25 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/_fe_analyzer_shared-21.0.0",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/_fe_analyzer_shared-19.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/analyzer-1.5.0",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/analyzer-1.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "args",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/args-2.1.0",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/args-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "async",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/async-2.6.1",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/async-2.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -33,7 +33,7 @@
     },
     {
       "name": "build",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/build-2.0.1",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/build-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -45,7 +45,7 @@
     },
     {
       "name": "built_value",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/built_value-8.0.6",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/built_value-8.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -93,15 +93,15 @@
     },
     {
       "name": "crypto",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/crypto-3.0.1",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/crypto-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/dart_style-2.0.1",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/dart_style-1.3.14",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.11"
     },
     {
       "name": "file",
@@ -135,7 +135,7 @@
     },
     {
       "name": "http_multi_server",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/http_multi_server-3.0.1",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/http_multi_server-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -159,7 +159,7 @@
     },
     {
       "name": "logging",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/logging-1.0.1",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/logging-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -183,7 +183,7 @@
     },
     {
       "name": "mockito",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/mockito-5.0.7",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/mockito-5.0.8",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -231,7 +231,7 @@
     },
     {
       "name": "shelf",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/shelf-1.1.1",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/shelf-1.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -261,9 +261,9 @@
     },
     {
       "name": "source_gen",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/source_gen-1.0.0",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/source_gen-0.9.10+4",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.11"
     },
     {
       "name": "source_map_stack_trace",
@@ -309,7 +309,7 @@
     },
     {
       "name": "test",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/test-1.17.3",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/test-1.17.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -321,7 +321,7 @@
     },
     {
       "name": "test_core",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/test_core-0.3.23",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/test_core-0.3.24",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -339,7 +339,7 @@
     },
     {
       "name": "vm_service",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/vm_service-6.2.0",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/vm_service-6.1.0+1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -351,7 +351,7 @@
     },
     {
       "name": "web_socket_channel",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/web_socket_channel-2.1.0",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/web_socket_channel-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -374,7 +374,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-05-07T06:26:18.738442Z",
+  "generated": "2021-07-07T11:05:46.202479Z",
   "generator": "pub",
-  "generatorVersion": "2.12.3"
+  "generatorVersion": "2.13.1"
 }
