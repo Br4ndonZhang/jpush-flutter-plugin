@@ -3,13 +3,13 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/_fe_analyzer_shared-22.0.0",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/_fe_analyzer_shared-26.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/analyzer-1.7.1",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/analyzer-2.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -171,7 +171,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/meta-1.3.0",
+      "rootUri": "file:///Users/Brandon/.pub-cache/hosted/pub.flutter-io.cn/meta-1.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -374,7 +374,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-08-17T03:13:51.931099Z",
+  "generated": "2021-09-23T02:15:42.005525Z",
   "generator": "pub",
-  "generatorVersion": "2.13.4"
+  "generatorVersion": "2.14.2"
 }
