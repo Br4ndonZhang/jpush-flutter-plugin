@@ -16,9 +16,8 @@ A new flutter plugin project.
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.dependency 'JCore','2.7.1-noidfa'
-  s.dependency 'JPush','3.7.4'
+  s.dependency 'JPush','3.7.0'
   
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
   s.static_framework = true
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
 end
